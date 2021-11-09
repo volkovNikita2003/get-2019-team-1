@@ -85,6 +85,7 @@ def showMeasures(measures, count, samplesInMeasure, start, finish):
 
 
 initSpiAdc()
+samples = 15 # количество измерений, усредненных в одно в sample (параметр samplesInMeasure в функциях saveMeasures, showMeasures)
 
 try:
     # 1. колибровка
@@ -98,7 +99,7 @@ try:
             finish = time.time()
             if finish - start >= 10:
                 break
-            sample.append(getAdc())
+            sample.append(getMeanAdc(samples))
 
         #сохранение данных в файл
         saveMeasures(sample, len(sample), 1, start, finish)
@@ -116,7 +117,7 @@ try:
         finish = time.time()
         if finish - start >= 30:
             break
-        sample.append(getAdc())
+        sample.append(getMeanAdc(samples))
     
     #сохранение данных в файл
     saveMeasures(sample, len(sample), 1, start, finish)

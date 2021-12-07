@@ -3,12 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # определенное руками
-rest_pulse_value = 63 # пульс до упражнений
-rest_pressure = [118, 79] # верхнее и нижнее давления до упражнений
-rest_pressure_time = [10.2, 20.2] # время верхнего и нижнего давлений до упражнений
-fitness_pulse_value = 67 # пульс после упражнений
-fitness_pressure = [146, 79] # верхнее и нижнее давления после упражнений
-fitness_pressure_time = [4.75, 20.2] # время верхнего и нижнего давлений после упражнений
+rest_pulse_value = 80 # пульс до упражнений
+rest_pressure = [134, 79] # верхнее и нижнее давления до упражнений
+rest_pressure_time = [7.2, 23.8] # время верхнего и нижнего давлений до упражнений
+fitness_pulse_value = 120 # пульс после упражнений
+fitness_pressure = [148, 70] # верхнее и нижнее давления после упражнений
+fitness_pressure_time = [7.3, 28.5] # время верхнего и нижнего давлений после упражнений
 
 
 ########################################
@@ -172,8 +172,8 @@ ax.legend(loc="upper right") # легенда
 # ax_y_max = max(rest_pulse) + 5/100 * (max(rest_pulse) - min(rest_pulse))
 ax_x_min = 0
 ax_x_max = 30
-ax_y_min = -1.5
-ax_y_max = 1.5
+ax_y_min = -2
+ax_y_max = 2
 ax.axis( [ax_x_min, ax_x_max, ax_y_min, ax_y_max] )
 
 # Добавляем подписи к осям:
@@ -255,7 +255,7 @@ ax.set_xlabel('Время [с]')
 ax.set_ylabel('Давление [мм.рт.ст.]')
 
 # заголовок графика
-ax.set_title("Артериальное давление до физической нагрузки", loc = "center", wrap=True)
+ax.set_title("Артериальное давление после физической нагрузки", loc = "center", wrap=True)
 
 # сетка
 ax.minorticks_on()
@@ -313,7 +313,7 @@ ax.set_xlabel('Время [с]')
 ax.set_ylabel('Изменение давления в артерии [мм.рт.ст.]')
 
 # заголовок графика
-ax.set_title("Пульс до физической нагрузки", loc = "center", wrap=True)
+ax.set_title("Пульс после физической нагрузки", loc = "center", wrap=True)
 
 # сетка
 ax.minorticks_on()
